@@ -203,9 +203,24 @@ console.log(repeat(13, 5))
 
 
 ////////////////// Ejercicio 20 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-const vreplace = (oracion) => {
-
+String.prototype.vreplace = function (vocal) {
+    const chars = Object.values(this)
+    let newWord = '';
+    chars.forEach(char => {
+        if (char === 'a'
+            || char === 'e'
+            || char === 'i'
+            || char === 'o'
+            || char === 'u') {
+            newWord += vocal;
+        } else {
+            newWord += char;
+        }
+    })
+    return newWord
 }
+
+'apples and bananas'.vreplace('u');
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
